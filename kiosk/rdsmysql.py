@@ -26,6 +26,9 @@ from PIL import Image
 import base64
 from io import BytesIO
 
+from typing import Tuple
+
+
 def connect_RDS(host, port, username, passwd, database):
     """
     connect AWS RDS with mysql
@@ -124,7 +127,7 @@ def create_tables(conn, cursor):
     
     conn.commit()
     
-def get_tables_name(cursor, db) -> tuple[str]:
+def get_tables_name(cursor, db) -> Tuple[str]:
     """
     get table name from database
 
@@ -141,7 +144,7 @@ def get_tables_name(cursor, db) -> tuple[str]:
     
     return tables
 
-def get_table_info(cursor, db, table) -> tuple[str]:
+def get_table_info(cursor, db, table) -> Tuple[str]:
     """
     get table info
 
